@@ -1,16 +1,20 @@
-function init(token, inputId, outputId) {
-  var input = $(inputId);
-  var timer = null;
-  var output = $(outputId);
-  
-  input.on("keyup", function() {
-    /* Debounce */
-    if (timer) clearTimeout(timer);
-    timer = setTimeout(function() {
-      search(input.val(), output);
-    }, 250);
-  });
+function init(apiKey, inputId, outputId) {
+    token.id = apiKey;
+
+
+    var input = $("#searchInput");
+    var output = $(outputId);
+    var timer = null;
+
+    input.on("keyup", function () {
+        /* Debounce */
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(function () {
+            search(input.val(), output);
+        }, 250);
+    });
 }
+
 
 function search(keyword, output) {
   var info = token() === "demo" ? "(based on demo token)" : "";
@@ -107,7 +111,7 @@ function showStation(station, output) {
 }
 
 function token() {
-  return token.id || "demo";
+    return token.id || "demo";
 }
 
 function colorize(aqi, specie) {
