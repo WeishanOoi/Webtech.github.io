@@ -15,6 +15,7 @@ function init(tokenId, inputId, outputId) {
 
 
 function search(keyword, output) {
+    $(tokenId).val('6d8547e3a5fc2b72c0f9ef9b3d435b2b3a7bab16');
     var info = token() == "demo" ? "(based on demo token)" : "";
     output.html("<h2>Search results " + info + ":</h2>");
     output.append($("<div/>").html("Loading..."));
@@ -69,6 +70,7 @@ function search(keyword, output) {
 }
 
 function showStation(station, output) {
+    $(tokenId).val('6d8547e3a5fc2b72c0f9ef9b3d435b2b3a7bab16');
     output.html("<h2>Pollutants & Weather conditions:</h2>");
     output.append($("<div/>").html("Loading..."));
     output.append($("<div/>").addClass("cp-spinner cp-meter"));
