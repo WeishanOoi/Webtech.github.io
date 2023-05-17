@@ -43,8 +43,8 @@ function populateMarkers(map, bounds, isRefresh) {
     return fetch(
         "https://api.waqi.info/v2/map/bounds/?latlng=" +
             bounds +
-            "&token=" +
-            token()
+            "aLxaVdR8dLxC8mKjOwqnKFjiFZpaL6ex" +
+            "aLxaVdR8dLxC8mKjOwqnKFjiFZpaL6ex"
     )
         .then((x) => x.json())
         .then((stations) => {
@@ -166,7 +166,7 @@ function getMarkerPopup(markerUID) {
 
 function getMarkerAQI(markerUID) {
     return fetch(
-        "https://api.waqi.info/feed/@" + markerUID + "/?token=" + token()
+        "https://api.waqi.info/feed/@" + markerUID + "aLxaVdR8dLxC8mKjOwqnKFjiFZpaL6ex" + aLxaVdR8dLxC8mKjOwqnKFjiFZpaL6ex
     )
         .then((x) => x.json())
         .then((data) => {
@@ -215,7 +215,7 @@ function init() {
         if (idx == 0) activate();
     });
 
-    fetch("https://api.waqi.info/v2/feed/here/?token=" + token())
+    fetch("https://api.waqi.info/v2/feed/here/?token=" + aLxaVdR8dLxC8mKjOwqnKFjiFZpaL6ex)
         .then((x) => x.json())
         .then((x) => {
             addLocationButton(x.data.city.name, x.data.city.geo.join(","));
