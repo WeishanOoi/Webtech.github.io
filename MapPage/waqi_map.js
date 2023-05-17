@@ -186,28 +186,38 @@ function init() {
             "13.106898860432123,77.38497433246386,12.825861486200223,77.84571346820603",
         Gdansk: "54.372158,18.638306",
         Paris: "48.864716,2.349014",
-        Paris: "48.864716,2.349014",
         "Los Angeles": "34.052235,-118.243683",
         Seoul: "37.532600,127.024612",
-        "Rio de Janeiro": "-23.1966,-43.6888",
-        Sydney: "-33.865143,151.209900",
+        Jakarta: "-6.200000,106.816666",
     };
 
-    const select = document.getElementById("location-select");
+    let oldButton;
+    function addLocationButton(location, bounds) {
+        let button = document.createElement("div");
+        button.classList.add("ui", "button", "tiny");
+        document.getElementById("leaflet-locations").appendChild(button);
+        button.innerHTML = location;
+        let activate = () => {
+            populateAndFitMarkers(map, bounds);
+            if (oldButton) oldButton.classList.remove("primary");
+            button.classList.add("primary");
+            oldButton = button;
+        };
+        button.onclick = activate;
+        return activate;
+    }
 
-    Object.keys(locations).forEach((key) => {
-        const option = document.createElement("option");
-        option.text = key;
-        option.value = locations[key];
-        select.add(option);
+    Object.keys(locations).forEach((location, idx) => {
+        let bounds = locations[location];
+        let activate = addLocationButton(location, bounds);
+        if (idx == 0) activate();
     });
 
-    select.addEventListener("change", function () {
-        const selectedLocation = select.options[select.selectedIndex].value;
-        populateAndFitMarkers(map, selectedLocation);
-    });
-
-    populateAndFitMarkers(map, Object.values(locations)[0]);
+    fetch("https://api.waqi.info/v2/feed/here/?token=aLxaVdR8dLxC8mKjOwqnKFjiFZpaL6ex")
+        .then((x) => x.json())
+        .then((x) => {
+            addLocationButton(x.data.city.name, x.data.city.geo.join(","));
+        });
 }
 
 init();
