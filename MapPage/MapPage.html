@@ -3,8 +3,8 @@
 <head>
     <link rel="stylesheet" href="Assignment.css">
     <script src="..\MapPage\waqi_map.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
     <script  src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>  
 </head>
 <body>
@@ -25,7 +25,18 @@
 
 
         <div  id='map'  style='height:350px;'  /> 
-
+<script>  
+      var  OSM_URL  =  'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';  
+      var  OSM_ATTRIB  =  '&copy;  <a  href="http://openstreetmap.org/copyright">OpenStreetMap</a>  contributors';  
+      var  osmLayer  =  L.tileLayer(OSM_URL,  {attribution:  OSM_ATTRIB});  
+  
+      var  WAQI_URL    =  "https://tiles.waqi.info/tiles/usepa-aqi/{z}/{x}/{y}.png?token=_TOKEN_ID_";  
+      var  WAQI_ATTR  =  'Air  Quality  Tiles  &copy;  <a  href="http://waqi.info">waqi.info</a>';  
+      var  waqiLayer  =  L.tileLayer(WAQI_URL,  {attribution:  WAQI_ATTR});  
+  
+      var  map  =  L.map('map').setView([51.505,  -0.09]);  
+      map.addLayer(osmLayer).addLayer(waqiLayer);  
+</script>
 
 </body>
 </html>
