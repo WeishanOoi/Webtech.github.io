@@ -1,10 +1,9 @@
 function init(tokenId, inputId, outputId) {
+    $(tokenId).val('6d8547e3a5fc2b72c0f9ef9b3d435b2b3a7bab16');
     token.id = tokenId;
-
     var input = $(inputId);
     var timer = null;
     var output = $(outputId);
-
     input.on("keyup", function () {
         /* Debounce */
         if (timer) clearTimeout(timer);
@@ -13,6 +12,7 @@ function init(tokenId, inputId, outputId) {
         }, 250);
     });
 }
+
 
 function search(keyword, output) {
     var info = token() == "demo" ? "(based on demo token)" : "";
