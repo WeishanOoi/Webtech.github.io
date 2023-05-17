@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="Assignment.css">
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="waqi_map.js"></script>
+</head>
+<body>
+    <section class="cover">
+        <nav>
+            <img class="img_lung" src="Logo.png" alt="Logo Image">            
+            <span class="logo">
+                AirPollute
+            </span>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="pollution-records.html">Pollution records</a></li>
+                <li><a href="preventions.html">Preventions</a></li>
+                <li><a href="petition.html">Petition</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <main>
+        <div  id='map'  style='height:380px;'    style='position:relative;'/>  
+        <script  type='text/javascript'  src='https://www.bing.com/api/maps/mapcontrol?callback=initBingMap'  async  defer></script> 
+    </main>
+
+</body>
+</html>
