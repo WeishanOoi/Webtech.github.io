@@ -1,10 +1,9 @@
-function init(apiKey, inputId, outputId) {
-    token.id = apiKey;
+function init(tokenId, inputId, outputId) {
+    init.tokenId = tokenId;  // Update this line
 
-
-    var input = $("#searchInput");
-    var output = $(outputId);
+    var input = $(inputId);
     var timer = null;
+    var output = $(outputId);
 
     input.on("keyup", function () {
         /* Debounce */
@@ -14,6 +13,7 @@ function init(apiKey, inputId, outputId) {
         }, 250);
     });
 }
+
 
 
 function search(keyword, output) {
@@ -111,7 +111,7 @@ function showStation(station, output) {
 }
 
 function token() {
-    return token.id || "demo";
+    return init.tokenId || "demo";  // Update this line
 }
 
 function colorize(aqi, specie) {
