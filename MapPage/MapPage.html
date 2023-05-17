@@ -2,19 +2,18 @@
 <html>
 <head>
     <link rel="stylesheet" href="Assignment.css">
-    <script src="waqi_map.js"></script>
-<script>  
-      var  OSM_URL  =  'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';  
-      var  OSM_ATTRIB  =  '&copy;  <a  href="http://openstreetmap.org/copyright">OpenStreetMap</a>  contributors';  
-      var  osmLayer  =  L.tileLayer(OSM_URL,  {attribution:  OSM_ATTRIB});  
-  
-      var  WAQI_URL    =  "https://tiles.waqi.info/tiles/usepa-aqi/{z}/{x}/{y}.png?token=_TOKEN_ID_";  
-      var  WAQI_ATTR  =  'Air  Quality  Tiles  &copy;  <a  href="http://waqi.info">waqi.info</a>';  
-      var  waqiLayer  =  L.tileLayer(WAQI_URL,  {attribution:  WAQI_ATTR});  
-  
-      var  map  =  L.map('map').setView([51.505,  -0.09],  11);  
-      map.addLayer(osmLayer).addLayer(waqiLayer);  
-</script>
+    <script src="../MapPage/waqi_map.js"></script>
+<link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet/dist/leaflet.js"
+      integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aMhUPKBPIV2L3IyadkLYg=="
+      crossorigin=""
+    ></script>
             <link  rel="stylesheet"  href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css"  />  
         <script  src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
 </head>
@@ -33,10 +32,9 @@
             </ul>
         </nav>
     </section>
-
-    <main>
-        <div  id='map'  style='height:380px;'  />  
-    <main>
+        <div id="leaflet-map"></div>
+        
+    
 
 </body>
 </html>
