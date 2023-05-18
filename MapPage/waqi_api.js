@@ -141,4 +141,4 @@ function colorize(aqi, specie) {
 }
 
 // Initialize the code by passing the API token
-init("6d8547e3a5fc2b72c0f9ef9b3d435b2b3a7bab16", "#inputId", "#outputId");
+init("6d8547e3a5fc2b72c0f9ef9b3d435b2b3a7bab16", "#searchInput", "#outputId");
