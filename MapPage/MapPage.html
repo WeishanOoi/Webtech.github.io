@@ -2,6 +2,7 @@
 <head>
     <link rel="stylesheet" href="Assignment.css">
     <script src="..\MapPage\waqi_api.js"></script>
+    <script src="..\MapPage\waqi_map.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
@@ -21,7 +22,10 @@
         </nav>
     </section>
 
-
+    <main>
+        <div  id='map'  style='height:380px;'    style='position:relative;'/>  
+        <script  type='text/javascript'  src='https://www.bing.com/api/maps/mapcontrol?callback=initBingMap'  async  defer></script> 
+    </main>
     
 <script>
   $(document).ready(function () {
