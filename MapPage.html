@@ -1,0 +1,42 @@
+<html>
+<head>
+    <link rel="stylesheet" href="Assignment.css">
+    <script src="..\MapPage\waqi_map.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="..\MapPage\waqi_api.js"></script>
+    
+
+</head>
+<body>
+    <section class="cover">
+        <nav>
+            <img class="img_lung" src="Logo.png" alt="Logo Image">            
+            <span class="logo">
+                AirPollute
+            </span>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="pollution-records.html">Pollution records</a></li>
+                <li><a href="preventions.html">Preventions</a></li>
+                <li><a href="petition.html">Petition</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <main>
+        <div  id='map'  style='height:380px;'    style='position:relative;'/>  
+        <script src='https://www.bing.com/api/maps/mapcontrol?callback=initBingMap'  async  defer></script>
+    </main>
+    
+     
+<script>
+  $(document).ready(function () {
+    init("6d8547e3a5fc2b72c0f9ef9b3d435b2b3a7bab16", "#searchInput", "#output");
+  });
+</script>
+
+    <input type="text" id="searchInput" placeholder="Enter station name or related keyword">
+    <div id="output"></div>
+
+
+</body>
