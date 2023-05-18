@@ -1,7 +1,7 @@
 function init(tokenId, inputId, outputId) {
     init.tokenId = tokenId;  // Update this line
 
-    var input = $(inputId);
+    var input = $(SearchinputId);
     var timer = null;
     var output = $(outputId);
 
