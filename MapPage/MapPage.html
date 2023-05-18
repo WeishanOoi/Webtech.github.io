@@ -4,6 +4,8 @@
     <script src="..\MapPage\waqi_api.js"></script>
     <script src="..\MapPage\waqi_map.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link  rel="stylesheet"  href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css"  />  
+<script  src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>  
 
 </head>
 <body>
@@ -21,8 +23,10 @@
             </ul>
         </nav>
     </section>
-    <div id="leaflet-map" style="height: 420px; position: relative; outline: none;" class="leaflet-container leaflet-retina leaflet-fade-anim" tabindex="0" data-gesture-handling-touch-content="Use two fingers to move the map" data-gesture-handling-scroll-content="Use ctrl + scroll to zoom the map">
+    
+    <div  id='map'  style='height:380px;'  />  
 
+    
 <script>
   $(document).ready(function () {
     init("6d8547e3a5fc2b72c0f9ef9b3d435b2b3a7bab16", "#searchInput", "#output");
